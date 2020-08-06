@@ -1,0 +1,11 @@
+{
+    "name": "bdnews24 bangla edition in new tab",
+    "description": "bdnews24 bangla edition in new tab with google search and weather.",
+    "manifest_version": 2,
+    "version": "0.0.0.1",
+    "permissions" : ["management", "https://sn.bluedot.ltd/", "https://weatherwidget.io/","https://forecast7.com/"],
+    "chrome_url_overrides" : {
+        "newtab": "newtab.html"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

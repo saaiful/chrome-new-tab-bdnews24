@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="news.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="search-box" id="myHeader">
+        <div class="search-grid">
+          <div class="search">
+            <form action="https://www.google.com/search?q=" method="get">
+              <input type="search" class="search" name="q" id="q" placeholder="Search the web">
+            </form>
+          </div>
+        </div>
+      </div>
+    <div class="page" id="app">
+      
+      <div class="news">
+        <a class="weatherwidget-io" href="https://forecast7.com/en/23d9590d15/dhaka-division/" data-label_1="DHAKA" data-label_2="WEATHER" data-theme="gray" data-icons="Climacons Animated" style="margin-top: 15px;" >DHAKA WEATHER</a>
+        <h1>সর্বশেষ খবর {{ channel }} থেকে</h1>
+        <div class="archive">
+          <article v-for="news in news_list" class="article">
+            <a :href="news.source" target="_blank"><img v-if="news.image" :src="news.image" alt="" style="width: 100%;"></a>
+            <div class="details">
+              <a :href="news.source" target="_blank">{{ news.title }}</a>
+              <div class="description">{{ news.short_description }}</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery -->
+    <script src="jquery.js"></script>
+    <script src="vue.js"></script>
+    <script src="axios.min.js"></script>
+    <script src="news.js"></script> 
+  </body>
+</html>
